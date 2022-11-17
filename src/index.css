@@ -1,0 +1,55 @@
+@import "~antd/dist/antd.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 5px;
+}
+
+hr {
+  opacity: 0.3;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+}
+
+.brand {
+  padding-left: 50px;
+  font-weight: 600;
+  font-size: x-large;
+}
+
+.ant-layout-sider {
+  color: rgb(0, 0, 0);
+  height: 785px;
+  line-height: 100px;
+  background-color: #f4f4f4 !important;
+}
+
+.ant-layout-content {
+  color: #fff;
+  background: rgb(227, 227, 227);
+  padding-top: 100px;
+  padding-left: 220px;
+}
+
+.ant-menu {
+  background-color: #f4f4f4 !important;
+  margin-left: 20px !important;
+}
+
+.ant-menu-item {
+  display: inline-flex;
+  background-color: #fff !important;
+  width: 150px;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 12%);
+  border-radius: 6px;
+}
+
+.books {
+  padding-left: 50px;
+}
