@@ -1,5 +1,6 @@
 import { gql, useMutation } from "@apollo/client";
 import React, { useState } from "react";
+import { Form, Input, Button } from "antd";
 
 const create_author = gql`
   mutation CreateAuthor($name: String!, $dateOfBirth: Date!) {
@@ -14,41 +15,40 @@ const create_author = gql`
 export const AuthorForm = () => {
   const [createAuthor] = useMutation(create_author);
   const [author, setAuthor] = useState({});
+  const [form] = Form.useForm();
 
-  const handleOnChange = (event) => {
-    setAuthor({ ...author, [event.target.name]: event.target.value });
+  const onFormLayoutChange = (event) => {
+    setAuthor({ ...author, [event.target.id]: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const onFinish = (event) => {
     createAuthor({ variables: { ...author } });
-    event.preventDefault();
     console.log("Author created");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label>Name:</label>
-        <input
-          className="form-control"
-          onChange={handleOnChange}
-          type="text"
-          name="name"
+    <Form layout="vertical" form={form} onFinish={onFinish}>
+      <Form.Item label="Author name:" wrapperCol={{ span: 10 }}>
+        <Input
+          placeholder="Salem Martinez"
+          id="name"
+          onChange={onFormLayoutChange}
         />
-      </div>
+      </Form.Item>
 
-      <div className="form-group">
-        <label>Birthdate:</label>
-        <input
-          className="form-control"
-          onChange={handleOnChange}
-          type="text"
-          name="dateOfBirth"
+      <Form.Item label="Birthdate:" wrapperCol={{ span: 10 }}>
+        <Input
+          placeholder="123456789"
+          id="dateOfBirth"
+          onChange={onFormLayoutChange}
         />
-      </div>
+      </Form.Item>
 
-      <hr />
-      <input className="btn btn-primary" type="submit" value="Create" />
-    </form>
+      <Form.Item>
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form.Item>
+    </Form>
   );
 };
