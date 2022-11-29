@@ -22,7 +22,7 @@ export const AuthorsPage = () => {
   return (
     <>
       {data.authors.map(({ id, name, dateOfBirth }) => (
-        <div className="card" key={id}>
+        <div key={id}>
           <Card
             title={name}
             bordered={false}

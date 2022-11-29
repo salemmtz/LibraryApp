@@ -6,11 +6,26 @@ const { Sider, Content } = Layout;
 export const Main = ({ children }) => {
   return (
     <Layout>
-      <Sider width={200}>
+      <Sider
+        width={200}
+        style={{
+          height: "785px",
+          lineHeight: "75px",
+          backgroundColor: "#f4f4f4",
+        }}
+      >
         <Sidebar />
       </Sider>
       <Layout>
-        <Content>{children}</Content>
+        <Content
+          style={{
+            backgroundColor: "rgb(227, 227, 227)",
+            paddingTop: "100px",
+            paddingLeft: "220px",
+          }}
+        >
+          {children}
+        </Content>
       </Layout>
     </Layout>
   );

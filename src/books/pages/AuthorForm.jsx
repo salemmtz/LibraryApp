@@ -27,7 +27,12 @@ export const AuthorForm = () => {
   };
 
   return (
-    <Form layout="vertical" form={form} onFinish={onFinish}>
+    <Form
+      layout="vertical"
+      form={form}
+      onFinish={onFinish}
+      wrapperCol={{ span: 12, offset: 6 }}
+    >
       <Form.Item label="Author name:" wrapperCol={{ span: 10 }}>
         <Input
           placeholder="Salem Martinez"

@@ -24,7 +24,7 @@ export const BooksPage = () => {
   return (
     <>
       {data.books.map(({ id, title, author }) => (
-        <div className="card" key={id}>
+        <div key={id}>
           <Card
             title={title}
             bordered={false}

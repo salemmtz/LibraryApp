@@ -20,34 +20,3 @@ hr {
   font-weight: 600;
   font-size: x-large;
 }
-
-.ant-layout-sider {
-  color: rgb(0, 0, 0);
-  height: 785px;
-  line-height: 100px;
-  background-color: #f4f4f4 !important;
-}
-
-.ant-layout-content {
-  color: #fff;
-  background: rgb(227, 227, 227);
-  padding-top: 100px;
-  padding-left: 220px;
-}
-
-.ant-menu {
-  background-color: #f4f4f4 !important;
-  margin-left: 20px !important;
-}
-
-.ant-menu-item {
-  display: inline-flex;
-  background-color: #fff !important;
-  width: 140px !important;
-  box-shadow: 0 4px 6px rgb(0 0 0 / 12%);
-  border-radius: 6px;
-}
-
-.books {
-  padding-left: 50px;
-}
