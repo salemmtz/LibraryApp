@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  padding: 5px;
-}
-
 hr {
   opacity: 0.3;
   margin-left: 25px;
