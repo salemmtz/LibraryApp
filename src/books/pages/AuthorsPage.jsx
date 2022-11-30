@@ -2,16 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import { Card } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
-
-const getAuthors = gql`
-  query get_Authors {
-    authors {
-      id
-      name
-      dateOfBirth
-    }
-  }
-`;
+import { getAuthors } from "../graphQl/getAuthors";
 
 export const AuthorsPage = () => {
   const { loading, error, data } = useQuery(getAuthors);

@@ -19,6 +19,7 @@ export const AuthorForm = () => {
 
   const onFormLayoutChange = (event) => {
     setAuthor({ ...author, [event.target.id]: event.target.value });
+    // console.log(event.target.value);
   };
 
   const onFinish = (event) => {
