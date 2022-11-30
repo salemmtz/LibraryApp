@@ -14,7 +14,8 @@ const create_book = gql`
 `;
 
 export const BookForm = () => {
-  const [createBook] = useMutation(create_book);
+  const [createBook, { data: dataM, loading: loadingM, error: errorM }] =
+    useMutation(create_book);
   const [book, setBook] = useState({});
   const [form] = Form.useForm();
 
@@ -34,12 +35,17 @@ export const BookForm = () => {
 
   const onFinish = (event) => {
     createBook({ variables: { ...book } });
-    console.log("Book created");
+    console.log("Book created " + { dataM });
   };
 
   return (
-    <Form layout="vertical" form={form} onFinish={onFinish}>
-      <Form.Item label="Book title:" wrapperCol={{ span: 10 }}>
+    <Form
+      layout="vertical"
+      form={form}
+      onFinish={onFinish}
+      wrapperCol={{ span: 12, offset: 6 }}
+    >
+      <Form.Item label="Book title:" wrapperCol={{ span: 15 }}>
         <Input
           placeholder="The little prince"
           id="title"
@@ -47,8 +53,9 @@ export const BookForm = () => {
         />
       </Form.Item>
 
-      <Form.Item label="Author id:" wrapperCol={{ span: 10 }}>
+      <Form.Item label="Author id:" wrapperCol={{ span: 15 }}>
         <Select
+          showSearch
           placeholder="Select an author ID"
           options={data.authors.map(({ id }) => ({ label: id, value: id }))}
           onChange={onFormSelectChange}

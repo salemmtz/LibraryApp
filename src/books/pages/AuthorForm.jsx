@@ -34,7 +34,7 @@ export const AuthorForm = () => {
       onFinish={onFinish}
       wrapperCol={{ span: 12, offset: 6 }}
     >
-      <Form.Item label="Author name:" wrapperCol={{ span: 10 }}>
+      <Form.Item label="Author name:" wrapperCol={{ span: 15 }}>
         <Input
           placeholder="Salem Martinez"
           id="name"
@@ -42,9 +42,9 @@ export const AuthorForm = () => {
         />
       </Form.Item>
 
-      <Form.Item label="Birthdate:" wrapperCol={{ span: 10 }}>
+      <Form.Item label="Birthdate:" wrapperCol={{ span: 15 }}>
         <Input
-          placeholder="123456789"
+          placeholder="YYYY-MM-DD"
           id="dateOfBirth"
           onChange={onFormLayoutChange}
         />
